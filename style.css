@@ -83,38 +83,50 @@ html {
     margin-top: 20px;
   }
   
- .carousel__btn {
+ @keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 15px #00f3ff;
+  }
+  50% {
+    box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 15px #00f3ff;
+  }
+}
+
+.carousel__btn {
   outline: none;
-  border: none;
-  border-radius: 0.2rem;
-  background: #00599c;
-  padding: 0.5em 1em;
+  border: 2px solid #00f3ff;
+  border-radius: 0.3rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.8em 1.5em;
   font-size: 1.2em;
-  font-weight: 500;
-  color: #ffffff;
+  font-weight: 600;
+  color: #00f3ff;
   cursor: pointer;
   margin: 0 2rem;
   position: relative;
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
-  box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
+  animation: neonGlow 1.5s infinite alternate;
   text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff;
 }
 
 /* Hover effect */
 .carousel__btn:hover {
   transform: scale(1.1);
-  background: #000000;
-  color: #00f3ff;
-  box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 50px #00f3ff;
-  text-shadow: 0 0 8px #00f3ff, 0 0 15px #00f3ff;
+  background: #00f3ff;
+  color: #000000;
+  box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 45px #00f3ff;
+  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
 }
 
 /* Active (tap/click) effect */
 .carousel__btn:active {
   transform: scale(0.95);
-  background: #00f3ff;
-  color: #000000;
+  background: #000000;
+  color: #00f3ff;
   box-shadow: 0 0 20px #00f3ff, 0 0 40px #00f3ff, 0 0 60px #00f3ff;
-  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+  text-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff;
 }

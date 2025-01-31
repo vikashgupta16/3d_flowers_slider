@@ -1,23 +1,26 @@
+/* General Reset */
 html {
     box-sizing: border-box;
-  }
-  *, *::after, *::before {
+}
+*, *::after, *::before {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-  }
-  body {
-    background-size: cover;
-    background: #9aff88;
+}
+
+/* Romantic Background */
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
     display: flex;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     background-attachment: fixed;
     align-items: center;
-  }
-  
-  .carousel {
+}
+
+/* Carousel Container */
+.carousel {
     align-items: center;
     justify-content: space-between;
     perspective: 100rem;
@@ -25,108 +28,82 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-  
-  .carousel__cards {
+}
+
+/* Cards Rotation */
+.carousel__cards {
     position: relative;
     width: 20rem;
     height: 20rem;
     transform-style: preserve-3d;
     transform: translateZ(-25rem);
-    transition: transform 0.3s ease-in;
-  }
-  
-  .carousel__card {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Image Cards */
+.carousel__card {
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 2px solid white;
-    border-radius: 0.2rem;
-    font-size: 3em;
-    font-weight: 700;
-  }
-  
-  .carousel__img {
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+}
+
+/* Image */
+.carousel__img {
     display: inline-block;
     width: 100%;
     height: 100%;
-  }
-  
-  .carousel__card:nth-child(1) {
-    transform: rotateY(0deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(2) {
-    transform: rotateY(45deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(3) {
-    transform: rotateY(90deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(4) {
-    transform: rotateY(135deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(5) {
-    transform: rotateY(180deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(6) {
-    transform: rotateY(225deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(7) {
-    transform: rotateY(270deg) translateZ(25rem);
-  }
-  .carousel__card:nth-child(8) {
-    transform: rotateY(315deg) translateZ(25rem);
-  }
-  
-  .carousel__control {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
- @keyframes neonGlow {
-  0% {
-    box-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 15px #00f3ff;
-  }
-  50% {
-    box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff;
-  }
-  100% {
-    box-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 15px #00f3ff;
-  }
+    object-fit: cover;
+}
+
+/* Navigation Buttons */
+@keyframes neonGlow {
+  0% { box-shadow: 0 0 8px #ff4e50, 0 0 16px #ff758c; }
+  50% { box-shadow: 0 0 15px #ff758c, 0 0 30px #ff4e50; }
+  100% { box-shadow: 0 0 8px #ff4e50, 0 0 16px #ff758c; }
 }
 
 .carousel__btn {
-  outline: none;
-  border: 2px solid #00f3ff;
-  border-radius: 0.3rem;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 0.8em 1.5em;
-  font-size: 1.2em;
-  font-weight: 600;
-  color: #00f3ff;
-  cursor: pointer;
-  margin: 0 2rem;
-  position: relative;
-  text-transform: uppercase;
-  transition: 0.3s ease-in-out;
-  animation: neonGlow 1.5s infinite alternate;
-  text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff;
+    outline: none;
+    border: 2px solid #ff758c;
+    border-radius: 0.3rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.8em 1.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ff758c;
+    cursor: pointer;
+    margin: 0 2rem;
+    position: relative;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    animation: neonGlow 1.5s infinite alternate;
+    text-shadow: 0 0 5px #ff758c, 0 0 10px #ff4e50;
 }
 
 /* Hover effect */
 .carousel__btn:hover {
-  transform: scale(1.1);
-  background: #00f3ff;
-  color: #000000;
-  box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 45px #00f3ff;
-  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+    transform: scale(1.1);
+    background: #ff758c;
+    color: #fff;
+    box-shadow: 0 0 20px #ff4e50, 0 0 40px #ff758c;
 }
 
 /* Active (tap/click) effect */
 .carousel__btn:active {
-  transform: scale(0.95);
-  background: #000000;
-  color: #00f3ff;
-  box-shadow: 0 0 20px #00f3ff, 0 0 40px #00f3ff, 0 0 60px #00f3ff;
-  text-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff;
+    transform: scale(0.95);
+    background: #000;
+    color: #ff758c;
+    box-shadow: 0 0 25px #ff758c, 0 0 50px #ff4e50;
+}
+
+/* Romantic Glow on Cards */
+.carousel__card:nth-child(odd) {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+}
+.carousel__card:nth-child(even) {
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.7);
 }

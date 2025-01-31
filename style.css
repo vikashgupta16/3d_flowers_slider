@@ -10,7 +10,7 @@ html {
 
 /* Romantic Background */
 body {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #ffdde1);
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
@@ -30,7 +30,7 @@ body {
     flex-direction: column;
 }
 
-/* Cards Rotation */
+/* Cards Rotation - Keeping Your 45° Format */
 .carousel__cards {
     position: relative;
     width: 20rem;
@@ -45,10 +45,11 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid white;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+    transition: 0.3s ease-in-out;
 }
 
 /* Image */
@@ -59,11 +60,29 @@ body {
     object-fit: cover;
 }
 
-/* Navigation Buttons */
+/* Glowing Effect on Cards */
+.carousel__card:nth-child(odd) {
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
+}
+.carousel__card:nth-child(even) {
+    box-shadow: 0 0 25px rgba(255, 20, 147, 0.8);
+}
+
+/* 3D Transform - Keeping Your Format */
+.carousel__card:nth-child(1) { transform: rotateY(0deg) translateZ(25rem); }
+.carousel__card:nth-child(2) { transform: rotateY(45deg) translateZ(25rem); }
+.carousel__card:nth-child(3) { transform: rotateY(90deg) translateZ(25rem); }
+.carousel__card:nth-child(4) { transform: rotateY(135deg) translateZ(25rem); }
+.carousel__card:nth-child(5) { transform: rotateY(180deg) translateZ(25rem); }
+.carousel__card:nth-child(6) { transform: rotateY(225deg) translateZ(25rem); }
+.carousel__card:nth-child(7) { transform: rotateY(270deg) translateZ(25rem); }
+.carousel__card:nth-child(8) { transform: rotateY(315deg) translateZ(25rem); }
+
+/* Navigation Buttons - Romantic Glow */
 @keyframes neonGlow {
-  0% { box-shadow: 0 0 8px #ff4e50, 0 0 16px #ff758c; }
-  50% { box-shadow: 0 0 15px #ff758c, 0 0 30px #ff4e50; }
-  100% { box-shadow: 0 0 8px #ff4e50, 0 0 16px #ff758c; }
+    0% { box-shadow: 0 0 10px #ff4e50, 0 0 20px #ff758c; }
+    50% { box-shadow: 0 0 20px #ff758c, 0 0 40px #ff4e50; }
+    100% { box-shadow: 0 0 10px #ff4e50, 0 0 20px #ff758c; }
 }
 
 .carousel__btn {
@@ -88,8 +107,8 @@ body {
 .carousel__btn:hover {
     transform: scale(1.1);
     background: #ff758c;
-    color: #fff;
-    box-shadow: 0 0 20px #ff4e50, 0 0 40px #ff758c;
+    color: white;
+    box-shadow: 0 0 25px #ff4e50, 0 0 50px #ff758c;
 }
 
 /* Active (tap/click) effect */
@@ -97,13 +116,5 @@ body {
     transform: scale(0.95);
     background: #000;
     color: #ff758c;
-    box-shadow: 0 0 25px #ff758c, 0 0 50px #ff4e50;
-}
-
-/* Romantic Glow on Cards */
-.carousel__card:nth-child(odd) {
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
-}
-.carousel__card:nth-child(even) {
-    box-shadow: 0 0 20px rgba(255, 20, 147, 0.7);
+    box-shadow: 0 0 30px #ff758c, 0 0 60px #ff4e50;
 }

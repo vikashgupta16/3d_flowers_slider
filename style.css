@@ -83,7 +83,7 @@ html {
     margin-top: 20px;
   }
   
-  .carousel__btn {
+ .carousel__btn {
   outline: none;
   border: none;
   border-radius: 0.2rem;
@@ -101,10 +101,20 @@ html {
   text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff;
 }
 
+/* Hover effect */
 .carousel__btn:hover {
   transform: scale(1.1);
   background: #000000;
   color: #00f3ff;
   box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 50px #00f3ff;
   text-shadow: 0 0 8px #00f3ff, 0 0 15px #00f3ff;
+}
+
+/* Active (tap/click) effect */
+.carousel__btn:active {
+  transform: scale(0.95);
+  background: #00f3ff;
+  color: #000000;
+  box-shadow: 0 0 20px #00f3ff, 0 0 40px #00f3ff, 0 0 60px #00f3ff;
+  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
 }

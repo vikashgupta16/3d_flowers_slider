@@ -84,20 +84,27 @@ html {
   }
   
   .carousel__btn {
-    outline: none;
-    border: none;
-    border-radius: 0.2rem;
-    background: #00599c;
-    padding: 0.5em 1em;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #ffffff;
-    cursor: pointer;
-    margin: 0 2rem;
-  }
-  
-  .carousel__btn:hover {
-    transform: scale(1.04);
-    background: #000000;
-  }
-  
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  background: #00599c;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0 2rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
+  text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff;
+}
+
+.carousel__btn:hover {
+  transform: scale(1.1);
+  background: #000000;
+  color: #00f3ff;
+  box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff, 0 0 50px #00f3ff;
+  text-shadow: 0 0 8px #00f3ff, 0 0 15px #00f3ff;
+}
